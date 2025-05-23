@@ -127,6 +127,12 @@ sorting=nyt,]{biblatex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NASZE KOMENDY %%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\sphere}{\mathcal{S}}
+\newcommand{\disk}{\mathcal{D}}
+\newcommand{\pt}{\star}
+
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -165,9 +171,6 @@ sorting=nyt,]{biblatex}
 
 \AtEndEnvironment{proof}{\setcounter{clm}{0}}
 \newenvironment{clmproof}[1][\proofname]{\proof[#1]\renewcommand{\qedsymbol}{$\square$(claim)}}{\endproof}
-
-\newcommand{\orcidlogo}{\includegraphics[height=\fontcharht\font`\B]{orcidlogo.eps}}
-\newcommand{\orcid}[1]{\href{#1}{\orcidlogo #1}}
 
 \usepackage[hyphenbreaks]{breakurl}
 
@@ -300,12 +303,62 @@ $$\begin{pmatrix}
 
 \section{Homology}
 \subsection{Simplicial and Singular Homology}
-\subsection{Computations and Applications}
+\subsection{Computations and Applications}\label{subsection: Chapter 2.2 - Computations and Applications}
 \subsection{The Formal Viewpoint}
 \subsection{Additional Topics}
 \subsubsection{Homology and Fundamental Group}
 \subsubsection{Classical Applications}
-\subsubsection{Simplicial Approximation} Ble ble ble\\
+
+\begin{proposition}\label{proposition: 2B.1, homology of sphere and disc inclusions into sphere}
+    \hfill
+    \begin{enumerate}
+        \item For $\disk^k \simeq \Delta \subseteq \sphere^n$, for all $i$: $\tilde{H_i}(\sphere^n-\Delta) = 0$
+        \item For $\sphere^k \simeq \Sigma \subseteq \sphere^n$, $\tilde{H_i}(\sphere^n - \Sigma) = \Z$ for $i = n - k - 1$, and $0$ otherwise. 
+    \end{enumerate}
+\end{proposition}
+
+\begin{problem}\label{problem: 2.B.1}
+    Compute $H_i(\sphere^n -X)$ when $X$ is a subspace of $\sphere^n$ homeomorphic to $\sphere^k \vee \sphere^l$ or to $\sphere^k \sqcup \sphere^l$.
+\end{problem}
+
+\begin{proof}
+    In both cases we will use Prop. \ref{proposition: 2B.1, homology of sphere and disc inclusions into sphere} and {\bf Mayer-Vietoris sequence} (\todo{tu sformułować jakoś ładnie MV i dać odnośnik - to w sam raz na tekst nasz w rozdziale \ref{subsection: Chapter 2.2 - Computations and Applications}, no bo w Hatcherze to nie jest ujęte w żadne proposition})
+    \begin{enumerate}
+        \item Let $X \simeq \sphere^k \vee \sphere ^l$. In order to use the {\bf Mayer-Vietoris} we need to define: 
+        $$A := \sphere^n - \sphere^k, \;\;\;\;\;\;\; B := \sphere^n - \sphere^l$$
+        Observe, that 
+        $$A \cap B = \sphere^n - X, \;\;\;\;\;\;\; A \cup B = \sphere^n - \{\pt\} \simeq \R^n$$
+        By \todo{odnośnik do Mayera}, we get:
+        \[\begin{tikzcd}
+	\dots & {\tilde{H}_{i+1}(A\cup B)} & {\tilde{H}_{i}(A\cap B)} & {\tilde{H}_{i}(A)\oplus\tilde{H}_{i}(B)} & {\tilde{H}_{i}(A\cup B)} & \dots \\
+	\dots & {\tilde{H}_{i+1}(\R^n)} & {\tilde{H}_{i}(\sphere^n - X)} & \begin{array}{c}
+    \tilde{H}_{i}(\sphere^n-\sphere^k) \\
+    \oplus \\
+    \tilde{H}_{i}(\sphere^n-\sphere^l)
+\end{array} & {\tilde{H}_{i}(\R^n)} & \dots
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-2, to=1-3]
+	\arrow["{=}"{marking, allow upside down}, draw=none, from=1-2, to=2-2]
+	\arrow[from=1-3, to=1-4]
+	\arrow["{=}"{marking, allow upside down}, draw=none, from=1-3, to=2-3]
+	\arrow[from=1-4, to=1-5]
+	\arrow["{=}"{marking, allow upside down}, draw=none, from=1-4, to=2-4]
+	\arrow[from=1-5, to=1-6]
+	\arrow["{=}"{marking, allow upside down}, draw=none, from=1-5, to=2-5]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=2-3, to=2-4]
+	\arrow[from=2-4, to=2-5]
+	\arrow[from=2-5, to=2-6]
+    \end{tikzcd}\]
+   Because $\R^n$ is contractible, its homology groups are trivial, thus we get an isomorphism for every $i$:
+   $$\tilde{H}_{i}(\sphere^n - X) \simeq \tilde{H}_{i}(\sphere^n-\sphere^k) \oplus \tilde{H}_{i}(\sphere^n-\sphere^l)$$
+   Assuming $k \neq l$, for $i = n - k - 1$ and $i = n - l - 1$, we get that $\tilde{H}_{i}(\sphere^n - X) \simeq \Z$ for other $i$ it is $0$. Otherwise, that is when $k = l$, for $i = n - k - 1 = n - l - 1$, we get $\tilde{H}_{i}(\sphere^n - X) \simeq \Z^2$, and for other $i$ it is again $0$.
+
+   \item \todo{Dokończyć}
+    \end{enumerate}
+\end{proof}
+\subsubsection{Simplicial Approximation}
 
 \begin{center}
     \includegraphics[width=80mm]{lefschetz_number.jpg}
@@ -324,4 +377,9 @@ $$\begin{pmatrix}
 \subsubsection{Universal Coefficients for Homology}
 \subsubsection{The General K\"unneth Formula}
 \subsubsection{$H$-Spaces and Hopf Algebras}
+\subsubsection{The Cohomology of $\SO(n)$}
+\subsubsection{Bockstein Homomorphisms}
+\subsubsection{Limits and $\Ext$}
+\subsubsection{Transfer Homomorphisms}
+\subsubsection{Local Coefficients}
 \end{document}
