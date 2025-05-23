@@ -57,6 +57,28 @@ maxalphanames=4,
 sorting=nyt,]{biblatex}
 \addbibresource{two_three_steps.bib}
 \end{comment}
+
+\usepackage{filecontents}
+\begin{filecontents}{references.bib}
+
+\end{filecontents}
+
+\usepackage[
+backend=bibtex,
+%style=alphabetic,
+url=false,
+isbn=false,
+backref=true,
+citestyle=alphabetic,
+bibstyle=alphabetic,
+autocite=inline,
+maxnames=99,
+minalphanames=4,
+maxalphanames=4,
+sorting=nyt,
+]{biblatex}
+
+\addbibresource{references.bib}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -208,7 +230,7 @@ sorting=nyt,
 \begin{document}
 
 	\begin{abstract}
-	       We present the solutions to the excercises found in Allen Hatcher's ,,Algebraic Topology'' \cite{} with our own perspective and commentary. We also present proofs of selected theorems.
+	       We present the solutions to the excercises found in Allen Hatcher's ,,Algebraic Topology'' \cite{AH} with our own perspective and commentary. We also present proofs of selected theorems.
 	\end{abstract}
 	
 \maketitle
@@ -382,4 +404,8 @@ $$\begin{pmatrix}
 \subsubsection{Limits and $\Ext$}
 \subsubsection{Transfer Homomorphisms}
 \subsubsection{Local Coefficients}
+
+\printbibliography
+\nocite{*}
+
 \end{document}
