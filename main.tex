@@ -452,7 +452,6 @@ $$\begin{pmatrix}
 \begin{problem}\label{problem: 1.1.17}
     Construct infinitely many nonhomotopic retractions $\sphere^1 \vee\sphere^1 \rightarrow \sphere^1$.
 \end{problem}
-
 \begin{problem}\label{problem: 1.1.18}
     Using \cite[Lemma 1.15]{AH}, show that if a space $X$ obtained from a path-connected subspace $A$ by attaching a cell $e^n$ with $n \geq 2$, then the inclusion $A \hookrightarrow X$ induces a surjection on $\pi_1$. Apply this to show:
     \begin{enumerate}[(a)]
@@ -463,6 +462,15 @@ $$\begin{pmatrix}
 
 \subsection{Van Kampen's Theorem}
 \subsection{Covering Spaces} \todo{Covering Spacey -- mem z kevinem nad okręgiem}
+
+\begin{problem}\label{problem: 1.3.9.}
+    Show that if a path-connected, locally path-connected path-connected space \( X \) has \( \pi_1(X) \) finite, then every map \( X \to \sphere^1 \) is nullhomotopic.
+\end{problem}
+
+\begin{proof}
+    Denote the map by \( f: X \to \sphere^1 \). We will use the covering space \( p: \mathbb{R} \to \sphere^1 \). Since \( \pi_1(X) \) is finite, every element \( g \in \pi_1(X) \) has finite order, so does \( f_\star(g) \), so it is the identity element. Therefore the image \( f_\star(\pi_1(X)) \) is the trivial subgroup, so \( f \) has a lift \( \widetilde{f}: X \to \mathbb{R} \). As \( \mathbb{R} \) is contractible, \( \widetilde{f} \) is nullhomotopic, hence so is \( f = p \circ \widetilde{f} \).
+\end{proof}
+
 \subsection{Additional Topics}
 \subsubsection{Graphs and Free Groups}
 \subsubsection{$\mathcal{K}(G, 1)$-Spaces and Graphs of Groups}
