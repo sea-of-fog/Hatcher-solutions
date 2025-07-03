@@ -452,6 +452,18 @@ $$\begin{pmatrix}
 \begin{problem}\label{problem: 1.1.17}
     Construct infinitely many nonhomotopic retractions $\sphere^1 \vee\sphere^1 \rightarrow \sphere^1$.
 \end{problem}
+\begin{proof}
+    Let \( r_n \) be the retraction that fixes the left circle and winds the right circle in the wedge sum \( n \) times around the right. Then, if \( \gamma \) is the path that winds around the right circle once
+\[ 
+    (r_n)_*[\gamma] = [\delta]^n, 
+\]
+so the retractions \( r_n \) induce different homomorphisms. Suppose now that for some \( m \neq n \) we have \( r_m \simeq r_n \). Then by Lemma 1.19. \todo{dodać odnośnik} we have
+\[ 
+    (r_n)_\star = \beta_h (r_m)_\star,
+\]
+where \( h \) is the path traced by basepoint under the homotopy. Since both \( r_n \) and \( r_m \) fix the basepoint and \( \pi_1\sphere^1 \) is abelian, by \todo{dodać odnośnik} Problem 1.1.3. \( \beta_h \) does nothing, to \( (r_n)_\star = (r_m)_\star \).
+
+\end{proof}
 \begin{problem}\label{problem: 1.1.18}
     Using \cite[Lemma 1.15]{AH}, show that if a space $X$ obtained from a path-connected subspace $A$ by attaching a cell $e^n$ with $n \geq 2$, then the inclusion $A \hookrightarrow X$ induces a surjection on $\pi_1$. Apply this to show:
     \begin{enumerate}[(a)]
