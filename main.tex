@@ -23,7 +23,7 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{paralist, tabularx}
-\usepackage{enumitem}
+\usepackage{enumerate}
 \usepackage[utf8]{inputenc}
 \usepackage{mathabx,epsfig}
 \usepackage{tikz-cd}
@@ -85,48 +85,17 @@ sorting=nyt,
 \DeclareMathOperator{\Aut}{Aut}
 \DeclareMathOperator{\Sym}{Sym}
 \DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\UT}{UT}
-\DeclareMathOperator{\T}{T}
-\DeclareMathOperator{\Stab}{Stab}
-\DeclareMathOperator{\st}{st}
-\newcommand{\Bohr}[1]{{#1}^{\textrm{Bohr}}}
 \newcommand{\R}{{\mathbb{R}}}
 \newcommand{\Z}{{\mathbb{Z}}}
 \newcommand{\N}{{\mathbb{N}}}
-\newcommand{\ZZ}{{\bar{\Z}}}
-\newcommand{\G}{{\bar{G}}}
-%\newcommand{\M}{{\bar{M}}}
-\newcommand{\RR}{{\bar{R}}}
-\newcommand{\Lset}{\mathcal{L}_{set}}
-\newcommand{\Lsetp}[1]{\mathcal{L}_{set,{#1}}}
 \newcommand{\LL}{\mathcal{L}}
 \newcommand{\FF}[1]{\mathbb{F}_{#1}}
 \DeclareMathOperator{\error}{{error}}
 \DeclareMathOperator{\Mor}{Mor}
-\DeclareMathOperator{\ext}{ext}
 \DeclareMathOperator{\id}{id}
-
-\newcommand{\Ra}{(R,+)}
-\newcommand{\RRa}{(\RR,+)}
-\newcommand{\RRaD}{(\RR,+)^{0}}
-\newcommand{\RRaT}{(\RR,+)^{00}}
-\newcommand{\RRaI}{(\RR,+)^{000}}
-\newcommand{\RRiD}{\RR^{0}}
-\newcommand{\RRiT}{\RR^{00}}
-\newcommand{\RRiI}{\RR^{000}}
 
 \newcommand{\C}{\mathfrak{C}}
 \newcommand{\M}{{\mathcal M}}
-
-
-
-\newcommand{\Za}{(\Z,+)}
-\newcommand{\ZZa}{(\ZZ,+)}
-\newcommand{\ZZaD}{(\ZZ,+)^{0}}
-\newcommand{\ZZaT}{(\ZZ,+)^{00}}
-\newcommand{\ZZiD}{\ZZ^{0}}
-\newcommand{\ZZiT}{\ZZ^{00}}
-
 
 
 \newcommand\todo[1]{\textbf{\textcolor{redd}{#1}}}
@@ -148,9 +117,12 @@ sorting=nyt,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NASZE KOMENDY %%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\unit}{\mathcal{I}}
 \newcommand{\sphere}{\mathcal{S}}
 \newcommand{\disk}{\mathcal{D}}
 \newcommand{\pt}{\star}
+
+\DeclareMathOperator{\const}{{const}}
 
 \DeclareMathOperator{\SO}{SO}
 \DeclareMathOperator{\Ext}{Ext}
@@ -246,6 +218,13 @@ sorting=nyt,
 
 \newpage
 
+\section{Introduction}
+
+\todo{Blabla że co w ogóle robimy...}
+
+We denote a $k$-sphere by $\sphere^k$, $k$-disk by $\disk^k$ and a $[0, 1]$ segment by $\unit$. By $\simeq$ we mean homotopy or, when placed between spaces, homotopy equivalence when placed between spaces. We denote homeomorphisms by $\approx$.
+
+
 \section{The Fundamental Group}
 
 \subsection{Basic Constructions}
@@ -260,8 +239,124 @@ $f_0 \cdot g_0 \simeq f_1 \cdot g_1$ and $g_0 \simeq g_1$ then $f_0 \simeq f_1$.
 \end{problem}
 
 \begin{proof}
-    
+    The homotopy assumptions imply that $g_i$ have the same endpoints, and so do the $f_ig_i$, which means the $f_i$ have the same endpoints as well.
+
+    Since $g_0 \simeq g_1$, it is clear that $\bar{g_0} \simeq \bar{g_1}$. We proceed as shown on the homotpy diagram:
+
+    \todo{łobrazek}
+
+    Algebraically, this corresponds to the computations
+    % TODO: operator for const to improve the spacing
+    \[
+    f_0 \simeq f_0 \,\mathrm{const}_{x_0} \simeq f_0(g_0\overline{g_0}) \simeq (f_0g_0)\overline{g_0} \simeq (f_1g_1)\overline{g_1} \simeq f_1(g_1\overline{g_1})  \simeq f_1\,\mathrm{ const}_{x_0} \simeq f_1,
+    \]
+    where \(x_0\) denotes the enpoint of the paths $f_i$.
 \end{proof}
+
+\begin{problem}\label{problem: 1.1.2}
+    Show that the change-of-basepoint homomorphism $\beta_h$ depends only on the homotopy class of $h$.
+\end{problem}
+
+\begin{proof}
+    It suffices to show that for every two homotopic loops $h$ and $h'$ we have $\beta_h = \beta_{h'}$. Let $H$ denote the homotopy $h \simeq_{H} h'$. Take any loop $g$. We have that $\beta_h(g) = hg\overline{h} \simeq h'g\overline{h'} = \beta_{h'}(g)$. \todo{obrazek}
+\end{proof}
+
+\begin{problem}\label{problem: 1.1.3}
+    For a path-connected space \(X\), show that \(\pi_1(X)\) is abelian iff all basepoint-change homomorphism \(\beta_h\) depend only on the endpoints of the path \(h\).
+\end{problem}
+
+\begin{proof}
+    ($\Rightarrow$)
+    Consider any two paths $h,h'$ from points $y \in X$ to $x \in X$. We want to show that $\beta_h = \beta_{h'}$. Consider any loop $g \in \pi_1(X,x)$ and a loop $\bar{h}h'$ which also is in $\pi_1(X,x)$. Since $\pi_1(X)$ is abelian then $\pi_1(X,x)$ is also abelian. And so it follows that:
+    \[
+        g\cdot \bar{h}h' \simeq \bar{h}h' \cdot g 
+    \]
+    Now multiply it by $h$ on left hand side, and by $\bar{h'}$ on right hand side to get: 
+    \[
+        hg\bar{h} \simeq h'g\bar{h'}
+    \]
+    That is exactly equivalent to $\beta_h =\beta_{h'}$. \\
+
+    ($\Leftarrow$) Suppose that for any two paths from $x$ to $y$ they induce the same maps $\beta_h,\beta_{h'}$. In particular given any two loops $g,h$ in $\pi_1(X,x_0)$ we have $\beta_g = \beta_h$. And so it follows that:
+    \[
+    hg\bar{h}= \beta_h(g) =\beta_g(g)=g
+    \]
+    Thus $gh = hg$ which means that $\pi_1(X,x)$ is abelian, and so of course $\pi_1(X)$ is abelian too.
+\end{proof}
+
+\begin{problem}\label{problem: 1.1.4.}
+    A subspace \(X \subseteq \mathbb{R}^n\) is said to be \emph{star-shaped} if there is a point \(x_0 \in X\) such that for each \(x \in X\) the line segment from \(x_0\) to \(x\) lies in \(X\). Show that if a subspace \( X \subseteq \mathbb{R}^n\) is locally star-shaped, in the sense that every point of \(X\) has a star-shaped neighbourhood in \(X\), then every path in \(X\) is a piecewise linear path, that is, a path consisting of a finite number of straight lines traversed at constant speed. Show that this applies in particular when \(X\) is open or when \(X\) is a union of finitely many closed convex subsets.
+\end{problem}
+
+\begin{proof}
+In the case that \(X\) is star-shaped as a whole, it is contractible, so the thesis definitely holds. Denote the path in question by \(\gamma\). In general, we can use the compactness of the image of \( \gamma \) to cover it with finitely many star-shaped sets. However, in each of these we cannot just contract the curve, as we must keep the endpoints intact. 
+
+Instead we show the following: if \(X\) is star-shaped with \emph{star-point} \(x_0\), we can deform any path \(\gamma\) in \(X\) to a linear path going from \(\gamma(0)\) to \(x_0\) and then from \(x_0\) to \( \gamma(1) \). Without loss of generality \(x_0 = 0\). The homotopy given by
+\todo{Obrazek} 
+\[
+H_1(s,t) = \Bigl [ (1-t) + t|1 - 2s| \Bigr ] \gamma(s)
+\]
+achieves this partially, as it deforms \(\gamma(s)\) to \(|1 - 2s|\gamma(s)\), which is equal to \(\gamma(0), x_0, \gamma(1)\) at \(s=0, \frac{1}{2}, 1\). Now we turn to making the segments linear.
+
+If \( \delta \) is the first half of \(\gamma\), the homotopy \(H_1\) deforms it to the path \((1-s)\delta(s)\). We will deform it to \(s\delta(0)\), which is certainly constant-speed. This is achieved through the homotopy
+\[
+H_2(s,t) = (1-s)\delta\bigl((1-t)s\bigr).
+\]
+Finally, applying the same procedure to the second half of \(\gamma\), we will have indeed deformed \(\gamma\) to a piecewise-linear path consisting of two segments. 
+\end{proof}
+
+\begin{proof}[Open sets.]
+    In an open set, every point has a neighbourhood which is a Euclidean ball, so the space \(X\) is locally star-shaped.
+\end{proof}
+
+\begin{proof}[Finite unions of convex sets.] Call a subspace \(X \subseteq \mathbb{R}^n\) \emph{strictly locally star-shaped} iff every \(x \in X\) has a star-shaped neighbourhood \emph{for which it is the star-point}. Every convex set satisfies this property. We will show that if \(A\) and \(B\) are closed and strictly locally star-shaped, then so is their union.
+
+Pick a point \( x \in A \cup B \). Without loss of generality, \( x \in A\). Then either \( x \in B\) or \( x \) is separated from \(B\). In the first case, for some small \( r \) we have a neighbourhood
+\[
+B_r(x) \cap X = (B_r(x) \cap A) \cup (B_r(x) \cap B),
+\]
+which is the union of star-shaped neighbourhood with the same star-point, so it is star shaped. In the second case, for some small \(r\) we have
+\[
+B_r(x) \cap X = B_r(x) \cap A,
+\]
+so \(x\) has a star-shaped neighbourhood.
+\end{proof}
+
+\begin{problem}\label{problem: 1.1.5.}
+    Show that for a space \(X\), the following three conditions are equivalent:
+    \begin{enumerate}[(a)]
+        \item Every map \( \sphere^1 \longrightarrow X\) is homotopic to a constant map, with image a point.
+        \item Every map \(\sphere^1 \longrightarrow X\) extends to a map \(\disk^2 \longrightarrow X\).
+        \item \( \pi_1(X, x_0) = 0 \) for all \( x_0 \in X\).
+    \end{enumerate}
+    Deduce that a space \(X\) is simply-connected all maps \(\sphere^1 \longrightarrow X\) are homotopic. [In this problem, 'homotopic' means 'homotopic without regard to basepoints'.]
+\end{problem}
+
+\begin{proof} 
+    ($a \Rightarrow b$) Take any $f : \sphere^1 \rightarrow X$. We have that $f \simeq_H \const_{x_0}$ for some $x_0 \in X$, with a homotopy $H: \sphere^1 \times \unit \rightarrow X$. Since $H(x, 0) = f(x)$ and $H(x, 1) = x_0$ we can consider the quotient of $\sphere^1 \times \unit$ by the relation identifying $\sphere^1 \times \{1\}$ with a single point. Such a cone-like space is clearly homeomorphic with $\disk^2$. Let $j : \sphere^1 \times \unit \rightarrow \disk^2$ be the quotient map. We have the induced map $H'$ as shown in the diagram:
+    
+    \[\begin{tikzcd}
+	{\sphere^1} & {\sphere^1 \times \unit} & {\disk^2} \\
+	& X
+	\arrow["i", hook, from=1-1, to=1-2]
+	\arrow["f"', from=1-1, to=2-2]
+	\arrow["j", two heads, from=1-2, to=1-3]
+	\arrow["H"', from=1-2, to=2-2]
+	\arrow["{H'}", from=1-3, to=2-2]
+    \end{tikzcd}\]
+
+    Now observe that $H' \circ j \circ i$ extends $f$ to a disk. \\
+
+    ($b \Rightarrow c$) \todo{obrazek} Take any $g \in \pi_1(X,x_0)$. It can be represented as a map $g : \sphere^1 \to X$ and by assumption we get $\bar{g} : \disk^2 \to X$ which extends $g$. Suppose that $s \in \disk^2$ corresponds to the base point $x_0$ by $g$. Since disks are contractible we get homotopy $H$ that in $0$ is the boundary sphere $\sphere^1$ and in $1$ it is a point in the middle of $D^2$ and call it $m$. Now consider a path $h$ from point $s$ to $m$ as in the diagram. The homotopy $H$ contracts path $h$ to a constant path in $m$. We will now show that $\beta_h(g) = 0 \in \pi_1(X,\bar{g}(m))$. Since $\beta_h(g) = hg\bar{h}$ we conclude that $H$ contracts $hg\bar{h}$ to a point $\bar{g}(m)$, which is exactly representation of $0$ in $\pi_1(X,\bar{g}(m))$. Because $\beta_h$ is isomorphism we see that $g$ must be in the same class as trivial map in $\pi_1(X,x_0)$. \\
+
+    ($c \Rightarrow a$)
+
+    Since $\pi_1(X,x_0)$ is trivial, every loop is homotopic to a constant loop. Lets call this homotopy $H$. Since every loop can be represented as a map $\sphere^1 \to X$, by simply taking the homotopy $H$ we get the thesis.
+\end{proof}
+
+\begin{problem}\label{problem: 1.1.6}
+    We can regard $\pi_1(X, x_0)$ as the set of basepoint-preserving homotopy classes of maps $(\sphere^1, s_0) \rightarrow (X, x_0)$. Let $[\sphere^1, X]$ be the set of homotopy classes of maps $\sphere^1 \rightarrow X$ with no conditions on basepoints. Thus there is a natural map $\Phi : \pi_1(X, x_0) \rightarrow [\sphere^1, X]$ obtained by ignoring basepoints. Show that $\Phi$ is onto if $X$ is path-connected, and that $\Phi([f]) = \Phi([g])$ iff $[f]$ and $[g]$ are conjugate in $\pi_1(X, x_0)$. Hence $\Phi$ induces a one-to-one correspondence between $[\sphere^1, X]$ and the set of conjugacy classes in $\pi_1(X)$ when $X$ is path-connected.
+\end{problem}
 
 \begin{problem}\label{problem: 1.1.9}
     Let $A_1 , A_2 , A_3$ be compact sets in $\R^3$ . Use the \textbf{Borsuk–Ulam theorem} to show
@@ -313,12 +408,61 @@ $$\begin{pmatrix}
     \todo{Zamiast tych pmatrixów można pisać $A_i$}
 \end{proof}
 
+\begin{problem}\label{problem: 1.1.14}
+    Show that the isomorphism $\pi_1(X \times Y) \cong \pi_1(X) \times \pi_1(Y)$ in \cite[Proposition 1.12]{AH} is given by $[f] \mapsto ({p_1}_*([f]), {p_2}_*([f]))$ where $p_1$ and $p_2$ are the projections of $X \times Y$ onto its two factors.
+\end{problem}
+
+\begin{problem}\label{problem: 1.1.15}
+    Given a map $f:X \rightarrow Y$ and a path $h : \unit \rightarrow X$ from $x_0$ to $x_1$, show that $f_*\beta_h = \beta_{fh}f_*$, namely that the diagram below commutes.
+
+    \[\begin{tikzcd}
+	{\pi_1(X, x_1)} && {\pi_1(X, x_0)} \\
+	{\pi_1(Y, f(x_1))} && {\pi_1(Y, f(x_0))}
+	\arrow["{\beta_h}", from=1-1, to=1-3]
+	\arrow["{f_*}"', from=1-1, to=2-1]
+	\arrow["{f_*}", from=1-3, to=2-3]
+	\arrow["{\beta_{fh}}"', from=2-1, to=2-3]
+\end{tikzcd}\]
+\end{problem}
+
+\begin{proof}
+    Take any loop $\gamma \in \pi_1(X, x_1)$.
+    $$f_* \beta_h ([\gamma]) = f_*([h\gamma\bar{h}]) = [f\circ h\gamma\bar{h}] = [(f\circ h)(f \circ \gamma)\overline{(f \circ h)}] = \beta_{fh}([f \circ \gamma]) = \beta_{fh}f_*([\gamma])$$
+\end{proof}
+
+\begin{problem}\label{problem: 1.1.16}
+    Show that there are no retractions $r:X \rightarrow A$ in the following cases:
+    \begin{enumerate}[(a)]
+        \item $X = \R^3$ with $A$ any subspace homeomorphic to $\sphere^1$.
+        
+        \item $X = \sphere^1 \times \disk^2$ with $A$ its boundry torus $\sphere^1 \times \sphere^1$.
+        
+        \item $X = \sphere^1 \times \disk^2$ and $A$ the circle shown in the figure
+
+        \todo{rysunek}
+
+        \item $X = \disk^2 \vee \disk^2$ with $A$ its boundry $\sphere^1 \vee \sphere^1$.
+
+        \item $X$ a disk with two points on its boundry identified and $A$ its boundry $\sphere^1 \vee \sphere^1$.
+
+        \item $X$ the M\"obius band and $A$ its boundry circle.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem}\label{problem: 1.1.17}
+    Construct infinitely many nonhomotopic retractions $\sphere^1 \vee\sphere^1 \rightarrow \sphere^1$.
+\end{problem}
+
 \begin{problem}\label{problem: 1.1.18}
-    
+    Using \cite[Lemma 1.15]{AH}, show that if a space $X$ obtained from a path-connected subspace $A$ by attaching a cell $e^n$ with $n \geq 2$, then the inclusion $A \hookrightarrow X$ induces a surjection on $\pi_1$. Apply this to show:
+    \begin{enumerate}[(a)]
+        \item The wedge sum $\sphere^1 \vee\sphere^2$ has a fundamental group $\Z$.
+        \item For a path-connected CW-complex $X$ the inclusion map $X^{(1)} \hookrightarrow X$ of its $1$-skeleton induces a surjection $\pi_1(X^{(1)}) \rightarrow \pi_1(X)$.
+    \end{enumerate}
 \end{problem}
 
 \subsection{Van Kampen's Theorem}
-\subsection{Covering Spaces}
+\subsection{Covering Spaces} \todo{Covering Spacey -- mem z kevinem nad okręgiem}
 \subsection{Additional Topics}
 \subsubsection{Graphs and Free Groups}
 \subsubsection{$\mathcal{K}(G, 1)$-Spaces and Graphs of Groups}
@@ -345,7 +489,7 @@ $$\begin{pmatrix}
 
 \begin{proof}
     In both cases we will use Prop. \ref{proposition: 2B.1, homology of sphere and disc inclusions into sphere} and {\bf Mayer-Vietoris sequence} (\todo{tu sformułować jakoś ładnie MV i dać odnośnik - to w sam raz na tekst nasz w rozdziale \ref{subsection: Chapter 2.2 - Computations and Applications}, no bo w Hatcherze to nie jest ujęte w żadne proposition})
-    \begin{enumerate}
+    \begin{enumerate}[label=(a)]
         \item Let $X \simeq \sphere^k \vee \sphere ^l$. In order to use the {\bf Mayer-Vietoris} we need to define: 
         $$A := \sphere^n - \sphere^k, \;\;\;\;\;\;\; B := \sphere^n - \sphere^l$$
         Observe, that 
