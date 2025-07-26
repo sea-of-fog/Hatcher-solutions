@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+
+%0
+\draw (0,0) rectangle (6,6);
+\draw[mid arrow] (0,0) -- node[anchor = south]{$f_1$} (6,0);
+
+%1
+\draw (2,1) -- (6,0);
+\draw[mid arrow] (0,1) -- node[anchor = south]{$f_1$} (2,1);
+    \draw (2,0.95) -- (2,1.05);
+\draw[mid arrow] (2,1) -- node[anchor = south]{const} (6,1);
+
+%2
+\draw[mid arrow] (0,2) -- node[anchor = south]{$f_1$} (2,2);
+    \draw (2,1.95) -- (2,2.05);
+    \draw[dashed] (2,2) -- (2,1);
+\draw[mid arrow] (2,2) -- node[anchor = south]{$g_1$} (4,2);
+    \draw (4,1.95) -- (4,2.05);
+\draw[mid arrow] (6,2) -- node[anchor = south]{$\bar{g}_1$} (4,2);
+
+%4
+\draw[mid arrow] (0,4) -- node[anchor = south]{$f_0$} (2,4);
+    \draw (2,3.95) -- (2,4.05);
+\draw[mid arrow] (2,4) -- node[anchor = south]{$g_0$} (4,4);
+    \draw[dashed] (4,4) -- (4,2);
+    \node at (2,3) {$H_0$};
+\draw[mid arrow] (6,4) -- node[anchor = south]{$\bar{g}_0$} (4,4);
+    \node at (5,3) {$H_1$};
+
+%5
+\draw[mid arrow] (0,5) -- node[anchor = south]{$f_0$} (2,5);
+    \draw (2,4.95) -- (2,5.05);
+    \draw[dashed] (2,5) -- (2,4);
+\draw[mid arrow] (2,5) -- node[anchor = south]{const} (6,5);
+    \draw (2,5) -- (6,6);
+
+%6
+\draw[mid arrow] (0,6) -- node[anchor = south]{$f_0$} (6,6);
+
+\end{tikzpicture}

@@ -27,10 +27,20 @@
 \usepackage[utf8]{inputenc}
 \usepackage{mathabx,epsfig}
 \usepackage{tikz-cd}
+
 \usepackage{verbatim}
 
-
 \usepackage{etoolbox}
+
+
+%tikz pacakges and settings 
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings, calc, tqft}
+\usetikzlibrary{decorations.pathmorphing}
+\tikzset{mid arrow/.style={
+    postaction={decorate},
+    decoration={markings, mark=at position 0.5 with {\arrow{stealth}}}
+}}
 
 
 \usepackage{xcolor}
@@ -208,7 +218,7 @@ sorting=nyt,
 \maketitle
 
 \begin{center}
-    \includegraphics[width=120mm]{jd_śwg_jśw.jpg}
+    \includegraphics[width=120mm]{images/jd_śwg_jśw.jpg}
 \end{center}
 
 \begin{center}
@@ -243,8 +253,9 @@ $f_0 \cdot g_0 \simeq f_1 \cdot g_1$ and $g_0 \simeq g_1$ then $f_0 \simeq f_1$.
 
     Since $g_0 \simeq g_1$, it is clear that $\bar{g_0} \simeq \bar{g_1}$. We proceed as shown on the homotpy diagram:
 
-    \todo{łobrazek}
-
+    \begin{center}
+        \input{latex_figures/problem1.1.1.tex}
+    \end{center}
     Algebraically, this corresponds to the computations
     % TODO: operator for const to improve the spacing
     \[
@@ -547,7 +558,7 @@ where \( h \) is the path traced by basepoint under the homotopy. Since both \( 
 \subsubsection{Simplicial Approximation}
 
 \begin{center}
-    \includegraphics[width=80mm]{lefschetz_number.jpg}
+    \includegraphics[width=80mm]{images/lefschetz_number.jpg}
 \end{center}
 
 \section{Cohomology}
@@ -555,7 +566,7 @@ where \( h \) is the path traced by basepoint under the homotopy. Since both \( 
 \subsection{Cup Product}
 
 \begin{center}
-    \includegraphics[width=80mm]{cohomology_coefficients.jpg}
+    \includegraphics[width=80mm]{images/cohomology_coefficients.jpg}
 \end{center}
 
 \subsection{Poincare Duality}
@@ -576,7 +587,7 @@ where \( h \) is the path traced by basepoint under the homotopy. Since both \( 
 \thispagestyle{empty}
 
 \begin{center}
-    \includegraphics[width=120mm]{happy_ending.png}
+    \includegraphics[width=120mm]{images/happy_ending.png}
 \end{center}
 
 \end{document}
