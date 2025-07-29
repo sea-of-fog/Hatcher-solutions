@@ -243,7 +243,7 @@ This section is about basic constructions.
 
 \todo{Należałoby poprawić numerację problemów, żeby była tak jak w hatcherze, no i też żeby sekcje w Additional Topics nie były 2.4 itp tylko 2.A, 2.B itd}
 
-\begin{problem}\label{problem: 1.1.1}
+\begin{problem}[1.1.1]\label{problem: 1.1.1}
 Show that composition of paths satisfies the following cancellation property: If
 $f_0 \cdot g_0 \simeq f_1 \cdot g_1$ and $g_0 \simeq g_1$ then $f_0 \simeq f_1$.
 \end{problem}
@@ -264,7 +264,7 @@ $f_0 \cdot g_0 \simeq f_1 \cdot g_1$ and $g_0 \simeq g_1$ then $f_0 \simeq f_1$.
     where \(x_0\) denotes the enpoint of the paths $f_i$.
 \end{proof}
 
-\begin{problem}\label{problem: 1.1.2}
+\begin{problem}[1.1.2]\label{problem: 1.1.2}
     Show that the change-of-basepoint homomorphism $\beta_h$ depends only on the homotopy class of $h$.
 \end{problem}
 
@@ -272,7 +272,7 @@ $f_0 \cdot g_0 \simeq f_1 \cdot g_1$ and $g_0 \simeq g_1$ then $f_0 \simeq f_1$.
     It suffices to show that for every two homotopic loops $h$ and $h'$ we have $\beta_h = \beta_{h'}$. Let $H$ denote the homotopy $h \simeq_{H} h'$. Take any loop $g$. We have that $\beta_h(g) = hg\overline{h} \simeq h'g\overline{h'} = \beta_{h'}(g)$. \todo{obrazek}
 \end{proof}
 
-\begin{problem}\label{problem: 1.1.3}
+\begin{problem}[1.1.3]\label{problem: 1.1.3}
     For a path-connected space \(X\), show that \(\pi_1(X)\) is abelian iff all basepoint-change homomorphism \(\beta_h\) depend only on the endpoints of the path \(h\).
 \end{problem}
 
@@ -295,7 +295,7 @@ $f_0 \cdot g_0 \simeq f_1 \cdot g_1$ and $g_0 \simeq g_1$ then $f_0 \simeq f_1$.
     Thus $gh = hg$ which means that $\pi_1(X,x)$ is abelian, and so of course $\pi_1(X)$ is abelian too.
 \end{proof}
 
-\begin{problem}\label{problem: 1.1.4.}
+\begin{problem}[1.1.4]\label{problem: 1.1.4.}
     A subspace \(X \subseteq \mathbb{R}^n\) is said to be \emph{star-shaped} if there is a point \(x_0 \in X\) such that for each \(x \in X\) the line segment from \(x_0\) to \(x\) lies in \(X\). Show that if a subspace \( X \subseteq \mathbb{R}^n\) is locally star-shaped, in the sense that every point of \(X\) has a star-shaped neighbourhood in \(X\), then every path in \(X\) is a piecewise linear path, that is, a path consisting of a finite number of straight lines traversed at constant speed. Show that this applies in particular when \(X\) is open or when \(X\) is a union of finitely many closed convex subsets.
 \end{problem}
 
@@ -333,7 +333,7 @@ B_r(x) \cap X = B_r(x) \cap A,
 so \(x\) has a star-shaped neighbourhood.
 \end{proof}
 
-\begin{problem}\label{problem: 1.1.5.}
+\begin{problem}[1.1.5]\label{problem: 1.1.5.}
     Show that for a space \(X\), the following three conditions are equivalent:
     \begin{enumerate}[(a)]
         \item Every map \( \sphere^1 \longrightarrow X\) is homotopic to a constant map, with image a point.
@@ -365,11 +365,11 @@ so \(x\) has a star-shaped neighbourhood.
     Since $\pi_1(X,x_0)$ is trivial, every loop is homotopic to a constant loop. Lets call this homotopy $H$. Since every loop can be represented as a map $\sphere^1 \to X$, by simply taking the homotopy $H$ we get the thesis.
 \end{proof}
 
-\begin{problem}\label{problem: 1.1.6}
+\begin{problem}[1.1.6]\label{problem: 1.1.6}
     We can regard $\pi_1(X, x_0)$ as the set of basepoint-preserving homotopy classes of maps $(\sphere^1, s_0) \rightarrow (X, x_0)$. Let $[\sphere^1, X]$ be the set of homotopy classes of maps $\sphere^1 \rightarrow X$ with no conditions on basepoints. Thus there is a natural map $\Phi : \pi_1(X, x_0) \rightarrow [\sphere^1, X]$ obtained by ignoring basepoints. Show that $\Phi$ is onto if $X$ is path-connected, and that $\Phi([f]) = \Phi([g])$ iff $[f]$ and $[g]$ are conjugate in $\pi_1(X, x_0)$. Hence $\Phi$ induces a one-to-one correspondence between $[\sphere^1, X]$ and the set of conjugacy classes in $\pi_1(X)$ when $X$ is path-connected.
 \end{problem}
 
-\begin{problem}\label{problem: 1.1.9}
+\begin{problem}[1.1.7]\label{problem: 1.1.9}
     Let $A_1 , A_2 , A_3$ be compact sets in $\R^3$ . Use the \textbf{Borsuk–Ulam theorem} to show
 that there is one plane $P \subseteq \R^3$ that simultaneously divides each $A_i$ into two pieces of
 equal measure.
@@ -419,11 +419,11 @@ $$\begin{pmatrix}
     \todo{Zamiast tych pmatrixów można pisać $A_i$}
 \end{proof}
 
-\begin{problem}\label{problem: 1.1.14}
+\begin{problem}[1.1.14]\label{problem: 1.1.14}
     Show that the isomorphism $\pi_1(X \times Y) \cong \pi_1(X) \times \pi_1(Y)$ in \cite[Proposition 1.12]{AH} is given by $[f] \mapsto ({p_1}_*([f]), {p_2}_*([f]))$ where $p_1$ and $p_2$ are the projections of $X \times Y$ onto its two factors.
 \end{problem}
 
-\begin{problem}\label{problem: 1.1.15}
+\begin{problem}[1.1.15]\label{problem: 1.1.15}
     Given a map $f:X \rightarrow Y$ and a path $h : \unit \rightarrow X$ from $x_0$ to $x_1$, show that $f_*\beta_h = \beta_{fh}f_*$, namely that the diagram below commutes.
 
     \[\begin{tikzcd}
@@ -441,7 +441,7 @@ $$\begin{pmatrix}
     $$f_* \beta_h ([\gamma]) = f_*([h\gamma\bar{h}]) = [f\circ h\gamma\bar{h}] = [(f\circ h)(f \circ \gamma)\overline{(f \circ h)}] = \beta_{fh}([f \circ \gamma]) = \beta_{fh}f_*([\gamma])$$
 \end{proof}
 
-\begin{problem}\label{problem: 1.1.16}
+\begin{problem}[1.1.16]\label{problem: 1.1.16}
     Show that there are no retractions $r:X \rightarrow A$ in the following cases:
     \begin{enumerate}[(a)]
         \item $X = \R^3$ with $A$ any subspace homeomorphic to $\sphere^1$.
@@ -460,7 +460,7 @@ $$\begin{pmatrix}
     \end{enumerate}
 \end{problem}
 
-\begin{problem}\label{problem: 1.1.17}
+\begin{problem}[1.1.17]\label{problem: 1.1.17}
     Construct infinitely many nonhomotopic retractions $\sphere^1 \vee\sphere^1 \rightarrow \sphere^1$.
 \end{problem}
 \begin{proof}
@@ -475,7 +475,7 @@ so the retractions \( r_n \) induce different homomorphisms. Suppose now that fo
 where \( h \) is the path traced by basepoint under the homotopy. Since both \( r_n \) and \( r_m \) fix the basepoint and \( \pi_1\sphere^1 \) is abelian, by \todo{dodać odnośnik} Problem 1.1.3. \( \beta_h \) does nothing, to \( (r_n)_\star = (r_m)_\star \).
 
 \end{proof}
-\begin{problem}\label{problem: 1.1.18}
+\begin{problem}[1.1.18]\label{problem: 1.1.18}
     Using \cite[Lemma 1.15]{AH}, show that if a space $X$ obtained from a path-connected subspace $A$ by attaching a cell $e^n$ with $n \geq 2$, then the inclusion $A \hookrightarrow X$ induces a surjection on $\pi_1$. Apply this to show:
     \begin{enumerate}[(a)]
         \item The wedge sum $\sphere^1 \vee\sphere^2$ has a fundamental group $\Z$.
@@ -486,7 +486,7 @@ where \( h \) is the path traced by basepoint under the homotopy. Since both \( 
 \subsection{Van Kampen's Theorem}
 \subsection{Covering Spaces} \todo{Covering Spacey -- mem z kevinem nad okręgiem}
 
-\begin{problem}\label{problem: 1.3.9.}
+\begin{problem}[1.3.9]\label{problem: 1.3.9.}
     Show that if a path-connected, locally path-connected path-connected space \( X \) has \( \pi_1(X) \) finite, then every map \( X \to \sphere^1 \) is nullhomotopic.
 \end{problem}
 
@@ -514,7 +514,7 @@ where \( h \) is the path traced by basepoint under the homotopy. Since both \( 
     \end{enumerate}
 \end{proposition}
 
-\begin{problem}\label{problem: 2.B.1}
+\begin{problem}[2.B.1]\label{problem: 2.B.1}
     Compute $H_i(\sphere^n -X)$ when $X$ is a subspace of $\sphere^n$ homeomorphic to $\sphere^k \vee \sphere^l$ or to $\sphere^k \sqcup \sphere^l$.
 \end{problem}
 
