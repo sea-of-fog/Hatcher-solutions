@@ -464,6 +464,27 @@ $$\begin{pmatrix}
     \todo{Zamiast tych pmatrixów można pisać $A_i$}
 \end{proof}
 
+\begin{problem}[1.1.10]\label{problem: 1.1.10}
+    
+\end{problem}
+
+\begin{proof}
+    Consider two loops $\alpha  \in X \times \{y_0\}$ and $\beta \in \{x_0\} \times Y$. They represents
+    classes $[(\alpha, \text{const}_{y_0})]$ and $[(\text{const}_{x_0}, \beta)]$ (We use a little abuse of notation here) 
+    The goal is to proof that 
+    $$[(\alpha, \text{const}_{y_0})] [(\text{const}_{x_0}, \beta)] = [(\text{const}_{x_0}, \beta)][(\alpha, \text{const}_{y_0})] $$
+    
+    The diagram below show easy homotpy of loops: $\alpha \cdot \text{const}_{x_0} \simeq \text{const}_{x_0} \cdot \alpha$
+    \begin{center}
+        \input{latex_figures/problem1.1.10.tex}
+    \end{center}
+
+    We use this homotpy to construct the needed one to show the thesis. 
+
+    \todo{Nie wiem czy tego nie dokładniej napisać jakoś?}
+\end{proof}
+
+
 \begin{problem}[1.1.14]\label{problem: 1.1.14}
     Show that the isomorphism $\pi_1(X \times Y) \cong \pi_1(X) \times \pi_1(Y)$ in \cite[Proposition 1.12]{AH} is given by $[f] \mapsto ({p_1}_*([f]), {p_2}_*([f]))$ where $p_1$ and $p_2$ are the projections of $X \times Y$ onto its two factors.
 \end{problem}

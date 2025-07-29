@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+
+%0
+\draw (0,0) rectangle (4,4);
+\draw[mid arrow] (0,0) -- node[anchor = south]{$\alpha$} (2,0);
+\draw[mid arrow] (2,0) -- node[anchor = south]{$\text{const}_{x_0}$} (4,0);
+\draw (2,0) -- (4,2);
+
+%1
+\draw[mid arrow] (0,2) -- node[anchor = south]{$\alpha$} (4,2);
+\draw (0,2) -- (2,4);
+
+%2
+\draw[mid arrow] (0,4) -- node[anchor = south]{$\text{const}_{x_0}$} (2,4);
+\draw[mid arrow] (2,4) -- node[anchor = south]{$\alpha$} (4,4);
+
+\end{tikzpicture}
