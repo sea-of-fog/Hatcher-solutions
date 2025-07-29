@@ -1,0 +1,18 @@
+\begin{tikzpicture}[scale=2]
+
+  \draw[thick] (0,0) ellipse (1 and 0.2);
+
+  \draw[thick] (-1,0) -- (-1,2);
+  \draw[thick] (1,0) -- (1,2);
+
+  \draw[dashed] (-1, 2) arc (180:360:1 and 0.2);
+  \draw[thick]  (1, 2) arc (0:180:1 and 0.2);
+
+  \draw[blue, thick, domain=0:360, samples=100, variable=\t]
+    plot ({cos(\t)}, {2*\t/360});
+
+  \node at (0,-0.3) {$S^1 \times \{0\}$};
+  \node at (0,2.3) {$S^1 \times \{1\}$};
+  \node at (0.5,1.5) {$f \circ \gamma$};
+
+\end{tikzpicture}

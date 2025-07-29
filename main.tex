@@ -369,7 +369,46 @@ so \(x\) has a star-shaped neighbourhood.
     We can regard $\pi_1(X, x_0)$ as the set of basepoint-preserving homotopy classes of maps $(\sphere^1, s_0) \rightarrow (X, x_0)$. Let $[\sphere^1, X]$ be the set of homotopy classes of maps $\sphere^1 \rightarrow X$ with no conditions on basepoints. Thus there is a natural map $\Phi : \pi_1(X, x_0) \rightarrow [\sphere^1, X]$ obtained by ignoring basepoints. Show that $\Phi$ is onto if $X$ is path-connected, and that $\Phi([f]) = \Phi([g])$ iff $[f]$ and $[g]$ are conjugate in $\pi_1(X, x_0)$. Hence $\Phi$ induces a one-to-one correspondence between $[\sphere^1, X]$ and the set of conjugacy classes in $\pi_1(X)$ when $X$ is path-connected.
 \end{problem}
 
-\begin{problem}[1.1.7]\label{problem: 1.1.9}
+\begin{problem}[1.1.7]\label{problem: 1.1.7}
+    Define $f:\sphere^1 \times \unit \to \sphere^1 \times \unit$ by $f(\theta, s) = (\theta + 2\pi s , s)$, so $f$
+    restricts to the indentity  on the two boundary circles of $\sphere^1 \times \unit$. Show that $f$ is homotopic to 
+    the identity by a homotopy $f_t$ that is stationary on one of the boundary circles, but not by any homotopy $f_t$
+    that is stationary on both boundary cricles.   
+\end{problem}
+
+\begin{proof}
+    For the first part definie homotpy $f_t : \sphere^1 \times \unit \times \unit \to \sphere ^2 \times \unit$ as follows:
+
+    \begin{equation}
+        f_t(\theta, s) = (\theta  + 2 \pi s (1 - t) , s)
+    \end{equation}
+
+    This ofcource is stationary on $\sphere \times \{0\}$ because the term $2 \pi s (1 - t)$ vanishes for $s = 0$ for all $t$, but
+    we see that is not stationary on the boundary circle $\sphere^1 \times \{1\}$
+
+    For the second part consider a loop $\gamma(t) = (\theta_0,t)$, where $\theta_0$ is a point on $\sphere^1$. The image of $\gamma$ under
+    map $f$ will be a path connecting points $(\theta_0, 0)$ and $(\theta_0, 1)$ and going around the cylinder once (As pictured below).
+    \begin{center}
+        \input{latex_figures/problem1.1.7.tex}
+    \end{center}
+
+    Now suppose for contradiction that there is homotopy $f_t$ that is stationary on both boundary. Then we would be able to
+    construct homotopy between paths $f \circ \gamma$ and $\gamma$. Now consider loop based in $\theta_0$ $(f \circ \gamma) \cdot \bar{\gamma}$
+    This loops is nontrivial generator of group $\pi(\sphere^1 \times \unit, \theta_0)$. But we get that:
+    \begin{equation}
+        (f \circ \gamma) \cdot \bar{\gamma} \simeq \gamma \cdot \bar{\gamma} \simeq \text{const}_{\theta_0}
+    \end{equation}
+
+    That is contradiction.
+\end{proof}
+
+\begin{problem}[1.1.8]\label{problem: 1.1.8}
+    Does the Borsuk-Ulam theorem hold for the torus? In other words, for every map
+    $f: \sphere^1 \times \sphere^1 \to \R^2$ must there exist $(x,y) \in \sphere^1 \times \sphere^1$ such that 
+    $f(x,y)= f(-x,-y)$?
+\end{problem}
+
+\begin{problem}[1.1.9]\label{problem: 1.1.9}
     Let $A_1 , A_2 , A_3$ be compact sets in $\R^3$ . Use the \textbf{Borsuk–Ulam theorem} to show
 that there is one plane $P \subseteq \R^3$ that simultaneously divides each $A_i$ into two pieces of
 equal measure.
