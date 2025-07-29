@@ -465,7 +465,9 @@ $$\begin{pmatrix}
 \end{proof}
 
 \begin{problem}[1.1.10]\label{problem: 1.1.10}
-    
+    From the isomorphism $\pi_1(X \times Y , (x_0, y_0)) \simeq \pi_1(X, x_0)\times \pi_1(Y , y_0)$ it follows that
+    loops in $X \times \{y_0\}$ and $\{ x_0 \} \times Y$ represent commuting elements of $\pi_1
+    (X \times Y , (x_0, y_0))$. Construct an explicit homotopy demonstrating this
 \end{problem}
 
 \begin{proof}
@@ -484,6 +486,21 @@ $$\begin{pmatrix}
     \todo{Nie wiem czy tego nie dokładniej napisać jakoś?}
 \end{proof}
 
+\begin{problem}[1.1.11]\label{problem: 1.1.11}
+    If $X_0$ is the path-component of a space $X$ containing the basepoint $x_0$ show the inclusion $X_0 \hookrightarrow X$ induces an
+    isomorphism $\pi_1(X_0, x_0) \to \pi_1(X,x_0)$
+\end{problem}
+
+\begin{proof}
+    Let $\iota : X_0 \to X$ be the inclusion in question. The goal is to show that $\iota_{*}$ is an isomorphism. 
+    First we will show that $\iota_{*}$ is $1-1$. Take any two loops $[\alpha],[\beta] \in \pi_1(X_0,x_0)$
+    and suppose that $\iota_{*}([\alpha]) = \iota_{*}([\beta])$. That imply that $\iota \circ \alpha \simeq \iota \circ \beta$. 
+    Which gives us a homotopy $H : \unit \times \unit \to X$ of this two loops. And since $X_0$ is path component containing $x_0$ and each point in $Im(H)$ is path connected
+    to $x_0$ we get that $H$ is also an homotopy of paths $\alpha \simeq \beta$ which lives in $X_0$.
+    
+    Similarly we proof that the $\iota_{*}$ is onto. Let $\alpha$ be an arbitrary loop in $\pi_1(X,x_0)$. Its easy to see that $\alpha(t) \in X_0$
+    for all $t \in \unit$. And so $\alpha$ represents a loop in $\pi_1(X_0, x_0)$ aswell.
+\end{proof}
 
 \begin{problem}[1.1.14]\label{problem: 1.1.14}
     Show that the isomorphism $\pi_1(X \times Y) \cong \pi_1(X) \times \pi_1(Y)$ in \cite[Proposition 1.12]{AH} is given by $[f] \mapsto ({p_1}_*([f]), {p_2}_*([f]))$ where $p_1$ and $p_2$ are the projections of $X \times Y$ onto its two factors.
