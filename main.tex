@@ -518,6 +518,48 @@ $$\begin{pmatrix}
     The last equality was proven in section about fundamental group of circile in Hathcer: \cite{AH}
 \end{proof}
 
+\begin{problem}[1.1.13]\label{problem: 1.1.13}
+    Given a space $X$ and a path-connected subspace $A$ containing the basepoint $x_0$, show that the path map
+    $\pi_1(A, x_0) \ to \pi_1(X, x_0)$ induced by the inclusion $A \hookrightarrow X$ is surjective iff every 
+    path in $X$ with endpoints in $A$ is homotopic to a path in $A$.
+\end{problem}
+
+\begin{proof}
+    For sake of clarity we will denote homotpy classes of loops in subsape $A$ as $[\cdot]_A$ and $[\cdot]_X$ for loops in $X$.
+    \todo{Lepiej zrobić te implikacje w nawiasie:} Also we denote the inclusion $A \hookrightarrow X$ as $\iota$.
+    
+    ($\Leftarrow$)
+    
+    For this implication, we assume that every path in $X$ with endpoints in $A$ is homotopic to some path in $A$. This 
+    ofcource holds also for loops based in $x_0$. The goal is to show that $\iota_{*}$ is surjective. Take any loop $[\alpha]_X \in \pi_1(X, x_0)$
+    We need to find an loop $\alpha'$ in $A$ that is send to $\alpha$ by $\iota_{*}$.
+    By the assumption there exist a loop $\alpha'$ in $A$ which is homotpic to $\alpha$. And so it holds that:
+    $$\iota_{*}([\alpha']_A) = [\iota \circ \alpha']_X = [\alpha']_X = [\alpha]_X$$
+
+    ($\Rightarrow$)
+
+    Now assume that induced map $\iota_{*}$ is surjective. The goal now is to for any path $\gamma$ in $X$ 
+    from arbitrary points $a,b$ construct a new path from $a$ to $b$ that is in $A$.
+
+    From assumptions we know that $A$ is path connected, so we get two paths:
+    first from $x_0$ to $a$ that we will call $\epsilon$, and second from $a$ to $b$ that we call $\eta$.
+    Consider an loop $\varepsilon \cdot \gamma \cdot \bar{\eta} \cdot \bar{\varepsilon}$ based in $x_0$. Since map $\iota_{*}$ 
+    is surjective we get that there exist an loop $\gamma'$ in $A$ that satisfies $\gamma' \simeq_X \varepsilon \cdot \gamma \cdot \bar{\eta} \cdot \bar{\varepsilon}$
+    And by properties of homotopic equivalence we get that 
+    $$\bar{\varepsilon} \cdot \gamma' \cdot \epsilon \cdot \eta \simeq_X  \bar{\varepsilon} \cdot \varepsilon \cdot \gamma \cdot \bar{\eta} \cdot \bar{\varepsilon} \cdot \epsilon \cdot \eta$$
+    $$\bar{\varepsilon} \cdot \gamma' \cdot \epsilon \cdot \eta \simeq_X \gamma$$
+
+    And that gives that desired path is $\bar{\varepsilon} \cdot \gamma' \cdot \epsilon \cdot \eta$
+
+    
+    \begin{center}
+        \input{latex_figures/problem1.1.13.tex}
+    \end{center}
+
+
+
+\end{proof}
+
 \begin{problem}[1.1.14]\label{problem: 1.1.14}
     Show that the isomorphism $\pi_1(X \times Y) \cong \pi_1(X) \times \pi_1(Y)$ in \cite[Proposition 1.12]{AH} is given by $[f] \mapsto ({p_1}_*([f]), {p_2}_*([f]))$ where $p_1$ and $p_2$ are the projections of $X \times Y$ onto its two factors.
 \end{problem}
