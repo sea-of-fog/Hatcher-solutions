@@ -564,6 +564,13 @@ $$\begin{pmatrix}
     Show that the isomorphism $\pi_1(X \times Y) \cong \pi_1(X) \times \pi_1(Y)$ in \cite[Proposition 1.12]{AH} is given by $[f] \mapsto ({p_1}_*([f]), {p_2}_*([f]))$ where $p_1$ and $p_2$ are the projections of $X \times Y$ onto its two factors.
 \end{problem}
 
+\begin{proof}
+    In the proposition 1.1.12, the isomorphism is given by $[f] \to ([g], [h])$, where map $f = (g,h)$
+    But for any $f$ it holds that $p_1 f  = g$ and $p_2 f = h$, and so it also holds for homotpy classes.
+    And so the isomorphism is given by $[f] \to  (p_{1*}([f]), p_{2*}([f]))$.
+\end{proof}
+
+
 \begin{problem}[1.1.15]\label{problem: 1.1.15}
     Given a map $f:X \rightarrow Y$ and a path $h : \unit \rightarrow X$ from $x_0$ to $x_1$, show that $f_*\beta_h = \beta_{fh}f_*$, namely that the diagram below commutes.
 
