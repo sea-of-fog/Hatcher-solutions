@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+  \draw[mid arrow] 
+  (0,0)
+  .. controls (0.01, -0.3) and (0.99,-0.3)  .. (1,0);
+
+  \draw[mid arrow]
+  (1,0)
+  .. controls (1.01, -0.3) and (1.99,-0.3) .. (2,0);
+
+  \draw 
+  (0,0)
+  .. controls (0.01, 0.4) and  (1.99,0.4).. (2,0);
+
+  \draw[dashed]
+  (0,0.2) 
+  .. controls (0.5,-0.05) and (1.5, -0.05) ..  (2,  0.2)
+  .. controls (1.99, 0.45) and (0.01, 0.45) .. cycle;
+
+  \draw[mid arrow]
+  (1,0)
+  .. controls (0.99, 0.3) and (0.01, 0) .. (0,0.4);
+
+  \draw[mid arrow]
+  (2,0.4)
+  .. controls (1.99, 0) and (1.01, 0.3) .. (1,0);
+
+  \draw 
+  (0,0.4)
+  .. controls (0.01, 0.8) and  (1.99,0.8).. (2,0.4);
+\end{tikzpicture}

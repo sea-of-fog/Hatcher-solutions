@@ -584,6 +584,7 @@ $$\begin{pmatrix}
 \end{tikzcd}\]
 \end{problem}
 
+
 \begin{proof}
     Take any loop $\gamma \in \pi_1(X, x_1)$.
     $$f_* \beta_h ([\gamma]) = f_*([h\gamma\bar{h}]) = [f\circ h\gamma\bar{h}] = [(f\circ h)(f \circ \gamma)\overline{(f \circ h)}] = \beta_{fh}([f \circ \gamma]) = \beta_{fh}f_*([\gamma])$$
@@ -607,6 +608,75 @@ $$\begin{pmatrix}
         \item $X$ the M\"obius band and $A$ its boundry circle.
     \end{enumerate}
 \end{problem}
+
+\begin{proof}
+
+    We will use proposition 1.1.17 from \cite{AH}. It states that if $X$ retracts onto 
+    a subspace $A$ then inclusion map induces an injection map of fundamental groups.
+
+    \begin{enumerate}[(a)]
+        \item Suppose that there is such a retraction. Then by proposition 1.1.17 we would have
+        injection $\pi_1(A,x_0) \hookrightarrow  \pi_1(X,x_0)$. Since $A$ is $\sphere^1$ embeded in 
+        $X$ which is $R^3$ we get injection $\Z \hookrightarrow \{e\}$. And that gives contradiction.
+
+        \item We can calculate the fundamental groups of $X$ and $A$:
+            $$\pi_1(X) = \pi_1(\sphere^1 \times \disk^2) \cong \pi_1(\sphere^1) \times \pi_1(\disk^2) \cong  \Z$$
+            $$\pi_1(A) = \pi_1(\sphere^1 \times \sphere^1) \cong \Z \times \Z$$
+
+        If there was retraction of $X$ onto $A$ then it would induce injection of $\Z \times \Z \hookrightarrow \Z$.
+        Suppose there is injective homomorphism $\varphi$ of these groups. Then let $a = \varphi((1,0))$ and $b = \varphi((0,1))$.
+        Observe that both thouse elements are non zero since kernel of $\varphi$ must be $0$. Now consider $\varphi((b,-a)) = b\varphi((1,0)) - a\varphi((0,1)) = ba - ab = 0 $
+        Which means that kernel is non zero and that is contradition. 
+
+        \item  By the same calculations as previously we get that $\pi_1(X) \cong \Z$  and $\pi_1(A) \cong \Z$, so 
+        there is no contradiction in algebraic way. Suppose that there is an retraction. Then the inclusion $\iota : A \hookrightarrow X$
+        induces an injection $\iota_{*}$. This map sends loop that goes around $A$ to the same loop just embeded in $X$. But this loop in $X$ is nullhomotopic.
+        To see that, firtly observe that the loop we consider is homotopic to loop in a figure below
+        \begin{center}
+            \input{latex_figures/problem1.1.16.tex}
+        \end{center}
+
+        Then we can deformation retract $\sphere^1 \times \disk^2$ to the circle denoted by dashed line on a figure.
+        Since deformation retractions induce isomorphism of fundamental groups we get that our loop is mapped to an loop that goes around circle clockwise
+        and then counter clockwise, which is ofcource nullhomotpic. 
+        
+        \todo{napisać to lepiej}
+        
+        And since we get nontrivial elent of $\pi_1(A)$ being mapped to $0$ we see that $\iota_{*}$ is not injective and that is contradiction.
+
+        \item Observe that space $X$ is simply connected. By lemma 1.1.15 in \cite{AH} any loop $\gamma : I \to X$ is homotpic to a finite product
+        of loops each contained in one of the disks. But disks are simply connected and so each of factors is homotpic to trivial loop. This implies
+        that the whole loop is homotopic to a trivial one, and so $X$ is simply connected.
+
+        Now observe that $A$ has nontrivial fundamental group. There is retraction of $\sphere^1 \wedge \sphere^1$ to $\sphere^1$ (Just colapse
+        on of the cricle to a point) and it will induce an injcetion of $\Z$ into fundamental group of this wedge, and this proofs that there is an nontrivial element.
+
+        Now suppose that there is retraction of $X$ onto $A$. That will induce an injection of nontrivial group $\pi_1(\sphere^1 \wedge \sphere^1)$ to trivial group. 
+        But this is imposible so that gives a contradicion.
+
+        \item For this problem we need to show that there is no injection 
+        $\pi_1(\sphere^1 \wedge \sphere^1) \to \Z$. (Since $X$ deformation retracts onto a circle)
+        Take a loop $\omega_1$ to be loop that goes around first circle in $\sphere^1 \wedge  \sphere^1$ and 
+        $\omega_2$ to be loop that goes around the second circle. 
+
+        By retraction from previous point we see that $\omega_1$ and $\omega_2$ are not homotopic.  
+        and also for any powers $i,j$ the loops $\omega_1 ^ i $ is not homotpic to $\omega_2 ^j$. 
+        
+        Now suppose that $\iota_{*}(\omega_1) = a$ and $\iota_{*}(\omega_2) = b$, and consider:
+
+        $$\iota_{*}(\omega_1^b \cdot \omega_2^{-a}) =  \iota_{*}(\omega_1^b) + \iota_{*}(\omega_2^{-a}) = ab - ba = 0$$
+
+        And as previously we showed that kernel is non zero. So we get contradiction.
+
+        \item The fundamental group of Mobius strip is $\Z$ since there is an deformation retraction onto a circile goind around the strip in the middle.
+        If there were retraction onto boundary circle it would induce an injection:
+        $$\pi_1(A) \hookrightarrow \pi_1(X) \to \Z$$
+
+        Now just observe that by the deformation retraction the generator of $\pi_1(A)$ will be send to a loop that goes around
+        the middle cricle twice so in groups we will get map $\Z \to \Z$ given by $1 \to 2$, which is not injective. 
+        That gives a contradiction.
+    \end{enumerate}
+\end{proof}
 
 \begin{problem}[1.1.17]\label{problem: 1.1.17}
     Construct infinitely many nonhomotopic retractions $\sphere^1 \vee\sphere^1 \rightarrow \sphere^1$.
